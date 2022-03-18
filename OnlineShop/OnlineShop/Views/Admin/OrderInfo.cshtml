@@ -1,0 +1,60 @@
+﻿@model OnlineShop.Models.Order
+@{
+    ViewBag.Title = "OrderInfo";
+    Layout = "~/Views/Shared/_Admin2.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>订单基本信息</h3>
+                    @if (Model != null)
+                    {
+                    <table class="table">
+                        <tr>
+                            <th>订单id</th>
+                            <td>@Model.ID</td>
+                            <th>用户id</th>
+                            <td>@Model.CustomerID</td>
+
+                        </tr>
+                        <tr>
+                            <th>订单状态</th>
+                            <td>@Model.State</td>
+                            <th>下单时间</th>
+                            <td>@Model.OrderTime</td>
+                        </tr>
+                        <tr>
+                            <th>发货时间</th>
+                            <td>@Model.DeliverTIME</td>
+                            <th>订单完成时间</th>
+                            <td>@Model.FinishTime</td>
+                        </tr>
+                        <tr>
+                            <th>收货方姓名</th>
+                            <td>@Model.Reciever</td>
+                            <th>联系方式</th>
+                            <td>@Model.Phone</td>
+
+                        </tr>
+                        <tr>
+                            <th>收货地址</th>
+                            <td>@Model.Address</td>
+                            <th>快递单号</th>
+                            <td>@Model.DiliverId</td>
+                        </tr>
+                        <tr>
+                            <th colspan="4" style="text-align:center;">
+                                <input type="button" class="btn btn-default" onclick="javascript: window.location.href='/Admin/UpdateInfo'" value="修改">
+                                <input type="button" class="btn btn-default" onclick="javascript: window.history.back()" value="返回">
+                            </th>
+                        </tr>
+                    </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

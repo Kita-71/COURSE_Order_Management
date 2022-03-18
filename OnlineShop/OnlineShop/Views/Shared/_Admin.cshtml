@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-clearmin.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/material-design.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/small-n-flat.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/font-awesome.min.css">
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false);
+</head>
+<body class="cm-no-transition cm-1-navbar">
+    <div id="cm-menu">
+        <nav class="cm-navbar cm-navbar-primary">
+            <div class="cm-flex"><a href="/User/UsersIndex2" class="cm-logo"></a></div>
+            <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
+        </nav>
+        <div id="cm-menu-content">
+            <div id="cm-menu-items-wrapper">
+                <div id="cm-menu-scroller">
+                    <ul class="cm-menu-items">
+                        <li class="active"><a href="/User/UsersIndex2" class="sf-house">首页</a></li>
+                        <li class="cm-submenu">
+                            <a class="sf-window-layout">订单状态<span class="caret"></span></a>
+                            <ul>
+                                <li><a href="/User/OrderStatu1">待发货</a></li>
+                                <li><a href="/User/OrderStatu2">待收货</a></li>
+                                <li><a href="/User/OrderStatu3">已完成</a></li>
+                            </ul>
+                        </li>
+               
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header id="cm-header">
+        <nav class="cm-navbar cm-navbar-primary">
+            <div class="btn btn-primary md-menu-white hidden-md hidden-lg" data-toggle="cm-menu"></div>
+            <div class="cm-flex">
+                <h1>Home</h1>
+                <form id="cm-search" action="index.html" method="get">
+                    <input type="search" name="q" autocomplete="off" placeholder="Search...">
+                </form>
+            </div>
+            
+            <div class="dropdown pull-right">
+                <button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
+                <ul class="dropdown-menu">
+                    <li class="disabled text-center">
+                        <a style="cursor:default;"><strong>User</strong></a>
+                    </li>
+                    <li class="divider"></li>
+                 
+                    <li>
+                        <a href="/Login/Index"><i class="fa fa-fw fa-sign-out"></i> Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        @RenderBody()
+    <script src="~/Content/assets/js/lib/jquery.min.js"></script>
+    <script src="~/Content/assets/js/jquery.mousewheel.min.js"></script>
+    <script src="~/Content/assets/js/jquery.cookie.min.js"></script>
+    <script src="~/Content/assets/js/fastclick.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/clearmin.min.js"></script>
+    <script src="~/Content/assets/js/demo/home.js"></script>
+</body>
+</html>
+
