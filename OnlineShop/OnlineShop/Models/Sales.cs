@@ -12,21 +12,12 @@ namespace OnlineShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Sales
     {
         public int ID { get; set; }
-        public int CustomerID { get; set; }
-        public string State { get; set; }
-        public Nullable<System.DateTime> OrderTime { get; set; }
-        public Nullable<System.DateTime> FinishTime { get; set; }
-        public Nullable<System.DateTime> DeliverTIME { get; set; }
-        public string Reciever { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
-        public string DiliverId { get; set; }
-        public int CommodityID { get; set; }
+        public int Count { get; set; }
+        public int Amount { get; set; }
     
-        public virtual Users Users { get; set; }
         public virtual Commodity Commodity { get; set; }
     }
 }

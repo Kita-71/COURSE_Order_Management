@@ -1,0 +1,45 @@
+﻿@model OnlineShop.Models.Order
+@{
+    ViewBag.Title = "DeliverInfo";
+    Layout = "~/Views/Shared/_Admin2.cshtml";
+}
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>物流信息填写</h3>
+                    <form action="/Admin/DeliverInfo" method="post" onsubmit="return 1">
+                        <table class="table table-bordered" style="margin-top:10px;">
+                            <tr>
+                                <th style="text-align:right">快递单号</th>
+                                <td>
+                                    <input type="text" name="DiliverId" value="@Model.DiliverId" class="form-control" placeholder="快递单号">
+                                    <input type="hidden" name="id" value="@Model.ID">
+                                    <input type="hidden" name="CustomerID" value="@Model.CustomerID">
+                                    <input type="hidden" name="CommodityID" value="@Model.CommodityID">
+                                    <input type="hidden" name="CommodityName" value="@Model.Commodity.Name">
+                                    <input type="hidden" name="CommodityPrice" value="@Model.Commodity.Price">
+                                    <input type="hidden" name="State" value="@Model.State">
+                                    <input type="hidden" name="OrderTime" value="@Model.OrderTime">
+                                    <input type="hidden" name="DeliverTIME" value="@Model.DeliverTIME">
+                                    <input type="hidden" name="FinishTime" value="@Model.FinishTime">
+                                    <input type="hidden" name="Reciever" value="@Model.Reciever">
+                                    <input type="hidden" name="Phone" value="@Model.Phone">
+                                    <input type="hidden" name="Address" value="@Model.Address">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="4" style="text-align:center;">
+                                    <input type="submit" class="btn btn-default" onclick="javascript: window.history.back()" value="提交">
+                                    <input type="button" class="btn btn-default" onclick="javascript: window.history.back()" value="返回">
+                                </th>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

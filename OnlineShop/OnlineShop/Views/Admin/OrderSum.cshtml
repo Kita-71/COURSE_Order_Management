@@ -1,0 +1,82 @@
+﻿@model IEnumerable<OnlineShop.Models.Commodity>
+@{
+    ViewBag.Title = "OrderSum";
+    Layout = "~/Views/Shared/_Admin2.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel panel-heading">订单统计</div>
+                <table class="table">
+                    <tr>
+                        <th>
+                            商品id
+                        </th>
+                        <th>
+                            商品名称
+                        </th>
+                        <th>
+                            订单数目
+                        </th>
+                        <th>
+                            订单总额
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sales.Count)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sales.Amount)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">各商品订单占比</div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td style="white-space:nowrap">饮料</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger" style="width:@ViewBag.a%"></div>
+                            </div>
+                        </td>
+                        <td>@ViewBag.a%</td>
+                    </tr>
+                    <tr>
+                        <td style="white-space:nowrap">书本</td>
+                        <td style="width:100%">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-warning" style="width:@ViewBag.b%"></div>
+                            </div>
+                        </td>
+                        <td>@ViewBag.b%</td>
+                    </tr>
+                    <tr>
+                        <td style="white-space:nowrap">生活用品</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" style="width:@ViewBag.c%"></div>
+                            </div>
+                        </td>
+                        <td>@ViewBag.c%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

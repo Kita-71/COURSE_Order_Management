@@ -1,63 +1,38 @@
 ﻿@model OnlineShop.Models.Order
 @{
-    ViewBag.Title = "UpdateInfo";
-    Layout = "~/Views/Shared/_Admin2.cshtml";
+    ViewBag.Title = "DeliverInfo";
+    Layout = "~/Views/Shared/_Admin.cshtml";
 }
 <div class="container-fluid">
     <div class="row cm-fix-height">
         <div class="col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3>订单信息修改</h3>
-                    <form action="/Admin/UpdateInfo" method="post" onsubmit="return 1">
+                    <h3>物流信息填写</h3>
+                    <form action="/User/DeliverInfo" method="post" onsubmit="return 1">
                         <table class="table table-bordered" style="margin-top:10px;">
                             <tr>
-                                <th>订单id</th>
+                                <th style="text-align:right">收货人姓名</th>
                                 <td>
+                                    <input type="text" name="Reciever" value="@Model.Reciever" class="form-control" placeholder="姓名">
+                                    <input type="hidden" name="DiliverId" value="@Model.DiliverId">
                                     <input type="hidden" name="id" value="@Model.ID">
-                                    <input type="hidden" name="customid" value="@Model.CustomerID">
-                                    <input type="hidden" name="commodityid" value="@Model.CommodityID">
+                                    <input type="hidden" name="CustomerID" value="@Model.CustomerID">
+                                    <input type="hidden" name="CommodityID" value="@Model.CommodityID">
                                     <input type="hidden" name="CommodityName" value="@Model.Commodity.Name">
                                     <input type="hidden" name="CommodityPrice" value="@Model.Commodity.Price">
                                     <input type="hidden" name="State" value="@Model.State">
                                     <input type="hidden" name="OrderTime" value="@Model.OrderTime">
                                     <input type="hidden" name="DeliverTIME" value="@Model.DeliverTIME">
                                     <input type="hidden" name="FinishTime" value="@Model.FinishTime">
-                                    @Model.ID
                                 </td>
-                                <th>用户id</th>
-                                <td>@Model.CustomerID</td>
-
-                            </tr>
-                            <tr>
-                                <th>商品id</th>
-                                <td>@Model.CommodityID</td>
-                                <th>订单状态</th>
-                                <td>@Model.State</td>
-                            </tr>
-                            <tr>
-                                <th>下单时间</th>
-                                <td>@Model.OrderTime</td>
-                                <th>发货时间</th>
-                                <td>@Model.DeliverTIME</td>
-                            </tr>
-                            <tr>
-                                <th>订单完成时间</th>
-                                <td>@Model.FinishTime</td>
-                                <th style="text-align:right">快递单号</th>
-                                <td><input type="text" name="DiliverId" value="@Model.DiliverId" class="form-control" placeholder="快递单号"></td>
-                            </tr>
-                            <tr>
-                                <th style="text-align:right">收货人姓名</th>
-                                <td><input type="text" name="Reciever" value="@Model.Reciever" class="form-control" placeholder="姓名"></td>
                                 <th style="text-align:right">收货人联系方式</th>
                                 <td><input type="text" name="Phone" value="@Model.Phone" class="form-control" placeholder="联系方式"></td>
-
                             </tr>
                             <tr>
                                 <th style="text-align:right">收货地址</th>
                                 <td><input type="text" name="Address" value="@Model.Address" class="form-control" placeholder="收货地址"></td>
-                 
+
                             </tr>
                             <tr>
                                 <th colspan="4" style="text-align:center;">

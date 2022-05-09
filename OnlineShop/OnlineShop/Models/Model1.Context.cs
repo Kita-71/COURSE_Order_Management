@@ -27,5 +27,7 @@ namespace OnlineShop.Models
     
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Commodity> Commodity { get; set; }
+        public virtual DbSet<Sales> Sales { get; set; }
     }
 }

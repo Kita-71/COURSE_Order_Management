@@ -1,17 +1,27 @@
 ﻿@model IEnumerable<OnlineShop.Models.Order>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ShoppingCar";
     Layout = "~/Views/Shared/_Admin.cshtml";
 }
-
-
 <div class="container-fluid">
     <div class="row cm-fix-height">
         <div class="col-sm-12">
             <div class="panel panel-default">
-                <div class="panel panel-heading">所有订单</div>
+                <div class="panel panel-heading">购物车</div>
+                <div class="panel panel-heading">添加测试订单</div>
                 <table class="table">
+                    <tr>
+                        <th>
+                            @Html.ActionLink("添加商品1(饮料)", "NewOrder", new { id = 1 })
+                        </th>
+                        <th>
+                            @Html.ActionLink("添加商品2(书本)", "NewOrder", new { id = 2 })
+                        </th>
+                        <th>
+                            @Html.ActionLink("添加商品3(生活用品)", "NewOrder", new { id = 3 })
+                        </th>
+                    </tr>
                     <tr>
                         <th>
                             @Html.DisplayNameFor(model => model.ID)
@@ -23,17 +33,17 @@
                             @Html.DisplayNameFor(model => model.Commodity.Name)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.State)
+                            @Html.DisplayNameFor(model => model.Commodity.Price)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.OrderTime)
+                            @Html.DisplayNameFor(model => model.State)
                         </th>
                         <th></th>
                     </tr>
 
                     @foreach (var item in Model)
                     {
-                        if (item.CustomerID == ViewBag.userid && item.State.ToString() == "待发货")
+                        if (item.CustomerID == ViewBag.userid && item.State.ToString() == "未结算")
                         {
                 <tr>
                     <td>
@@ -46,13 +56,13 @@
                         @Html.DisplayFor(modelItem => item.Commodity.Name)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.Commodity.Price)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.State)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.OrderTime)
-                    </td>
-                    <td>
-                        @Html.ActionLink("detailes", "OrderInfo", new { id = item.ID })
+                        @Html.ActionLink("下单", "DeliverInfo", new { id = item.ID })
                     </td>
                 </tr>
                         }
@@ -61,3 +71,5 @@
             </div>
         </div>
     </div>
+</div>
+

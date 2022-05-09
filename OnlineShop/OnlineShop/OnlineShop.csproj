@@ -146,6 +146,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Commodity.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,6 +165,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sales.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">
@@ -1947,6 +1953,10 @@
     <Content Include="Views\User\OrderStatu3.cshtml" />
     <Content Include="Views\User\UsersIndex2.cshtml" />
     <Content Include="Views\User\OrderInfo.cshtml" />
+    <Content Include="Views\User\ShoppingCar.cshtml" />
+    <Content Include="Views\User\DeliverInfo.cshtml" />
+    <Content Include="Views\Admin\DeliverInfo.cshtml" />
+    <Content Include="Views\Admin\OrderSum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
